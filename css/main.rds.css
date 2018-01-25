@@ -1,0 +1,230 @@
+* {
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	transition: all .1s ease-in;
+}
+a, a:hover { text-decoration: none; }
+body {
+	font-family: 'Raleway', sans-serif;
+	color: #151515;
+	font-size: 14px;
+}
+figure { margin: 0; }
+html { font-size: 15px; }
+.Footer {
+	font-weight: bold;
+	text-align: right;
+	text-transform: uppercase;
+}
+.Dashboard {
+	background: #fff;
+	padding: 2rem 0;
+	position: relative;
+	z-index: 22;
+
+}
+.Dashboard-title {
+	font-weight: bold;
+	font-size: 2rem;
+	color: #171b22;;
+	margin: 0;
+}
+.Dashboard-subtitle {
+	color: #888e9a;
+	font-size: 1.3rem;
+}
+.riego {
+	color: #00bcd4;
+}
+.Header {
+	background: #252d3a;
+	height: calc(100vh - 0px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 2rem 0;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+.Header figure {
+	margin: 0 0 2rem 0;
+	text-align: center;
+}
+.Main {
+	background: #e7ebee;
+}
+.Nav-main {
+	list-style: none;
+	padding: 0;
+	text-transform: uppercase;
+}
+.Nav-main > li > a {
+	border-bottom: 1px solid #4b5970;
+	border-top: 1px solid #4b5970;
+	color: #888e9a;
+	display: block;
+	padding: 1rem .5rem;
+}
+.Nav-main > li > a:hover {
+	border-bottom-color: #00bcd4;
+	border-left: .3rem solid #00bcd4;
+	border-top-color: #00bcd4;
+	color: #fff;
+}
+.Nav-submenu {
+	background: #171b22;
+	color: #ad9144;
+	line-height: 1rem;
+	padding: 1.5rem;
+}
+.Nav-submenu a {
+	border: none;
+	color: #888e9a;
+	display: block;
+	padding: .7rem;
+}
+.Nav-submenu a:hover {
+	color: #fff;
+}
+.Nav-submenu ul {
+	list-style: none;
+	padding: 0 0 0 1rem;
+}
+.Section-article {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 1rem 0;
+}
+.Section-article a {
+	cursor: pointer;
+}
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+	color: #00bcd4;
+}
+.Section-container {
+	box-shadow: 0 0 2rem #d3d3d3;
+	margin: 2rem 0;
+	background: #fff;
+}
+.Section-content {
+	padding: 2rem 3rem;
+}
+.Section-descripcion {
+	margin: 0;
+	text-align: right;
+}
+.Section-header {
+	background: #c6dced;
+	color: #252d3a;
+	padding: 1.5rem 3rem;
+}
+.Section-extra a {
+	color: #6b9dc4;
+	padding: .5rem 1rem;
+	border: 1px solid #6b9dc4;
+	border-radius: .5rem;
+}
+.Section-extra a:hover {
+	background: #6b9dc4;
+	color: #fff;
+}
+.Section-title {
+	font-size: 1.3rem;
+	margin: 0;
+}
+.article-name {	
+	color: #888e9a;
+	margin: 1rem 0 0 0;
+}
+.article-value {
+	margin: -5.2rem 0 4rem 0;
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: ;
+}
+.container-fluid {
+	padding: 0;
+}
+.modo-activo {
+	font-weight: bold;
+}
+.icon {
+	display: inline-block;
+	height: 26px;
+	margin: 0 .5rem -.5rem 0;
+	width: 26px;
+}
+.zone {
+	border-bottom: 1px solid #888e9a;
+	margin: .5rem ;
+	padding: .5rem 2rem;
+}
+.zone:last-child {
+	border: none;
+}
+.zone-title {
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+.zone-description {
+	margin: 0 0 3rem 0;
+}
+.apagado { background: url(../img/nav-icon.png) right 0 no-repeat; }
+a:hover .apagado { background: url(../img/nav-icon.png) right -26px no-repeat; }
+.automatico { background: url(../img/nav-icon.png) -78px 0 no-repeat; }
+a:hover .automatico { background: url(../img/nav-icon.png) -78px -26px no-repeat; }
+.humedad { background: url(../img/nav-icon.png) -26px 0 no-repeat; }
+a:hover .humedad { background: url(../img/nav-icon.png) -26px -26px no-repeat; }
+.inicio { background: url(../img/nav-icon.png) no-repeat; }
+a:hover .inicio { background: url(../img/nav-icon.png) left -26px no-repeat; }
+.manual { background: url(../img/nav-icon.png) -104px 0 no-repeat; }
+a:hover .manual { background: url(../img/nav-icon.png) -104px -26px no-repeat; }
+.programador { background: url(../img/nav-icon.png) -52px 0 no-repeat; }
+a:hover .programador { background: url(../img/nav-icon.png) -52px -26px no-repeat; }
+
+.radio {
+	margin: 0.5rem .7rem;
+	display: inline-block;
+}
+.radio label {
+	text-align: center;
+}
+.radio input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+}
+.radio input[type="checkbox"] + .radio-label:before {
+	background: #f4f4f4;
+	border-radius: 100%;
+	border: 1px solid #b4b4b4;
+	content: '';
+	cursor: pointer;
+	display: block;
+	height: 1.4em;
+	position: relative;
+	text-align: center;
+	top: -0.2em;
+	transition: all 250ms ease;
+	vertical-align: top;
+	width: 1.4em;
+}
+.radio input[type="checkbox"]:checked + .radio-label:before {
+	background: #3197EE;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="checkbox"]:focus + .radio-label:before {
+	border-color: #3197EE;
+	outline: none;
+}
+.radio input[type="checkbox"]:disabled + .radio-label:before {
+	background: #b4b4b4;
+	border-color: #b4b4b4;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="checkbox"] + .radio-label:empty:before {
+	margin-right: 0;
+}
+#Modo {
+	margin-top: -2rem;
+}
