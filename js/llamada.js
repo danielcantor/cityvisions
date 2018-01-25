@@ -1,0 +1,53 @@
+$('document').ready(function(){
+    function hora(){
+        $.ajax({
+            type:'post',
+            url:'inc/tiempo.php',
+            success:function($hora){
+                $('#timer').html($hora);
+                setTimeout(hora(),60000);
+            }
+        });
+
+    }
+        setTimeout(hora(),60000);
+    var horario= $('#horarios').val();
+    if(horario == 1){
+    $('#hor2').fadeOut('fast');
+    $('#hor3').fadeOut('fast');
+    $('#hor2').addClass('hide');
+    $('#hor3').addClass('hide');
+    }
+    $('#horarios').change(function(){
+        horario=$(this).val();
+        if(horario == 1){
+            $('#hor2').fadeOut('fast');
+            $('#hor3').fadeOut('fast');
+            $('#hor2').addClass('hide');
+            $('#hor3').addClass('hide');
+        }
+        if(horario == 2){
+            
+            if($('#hor3').hasClass('hide') == false){
+                $('#hor3').fadeOut('fast');
+                $('#hor3').addClass('hide');
+            }else{
+                $('#hor2').fadeIn('fast');
+                $('#hor2').removeClass('hide');
+            }
+        }
+        if(horario == 3){
+            if($('#hor2').hasClass('hide') == true){
+                $('#hor2').fadeIn('fast');
+                $('#hor2').removeClass('hide');
+                $('#hor3').fadeIn('fast');
+                $('#hor3').removeClass('hide');
+            }else{
+                $('#hor3').fadeIn('fast');
+                $('#hor3').removeClass('hide');
+            }            
+        }
+    });
+});
+
+
