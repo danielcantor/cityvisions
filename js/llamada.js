@@ -48,6 +48,20 @@ $('document').ready(function(){
             }            
         }
     });
+    $('*:checkbox').click(function(){
+        var check=$(this).attr('class');
+        $('.' + check).prop("disabled", true);
+        $(this).prop("disabled", false);
+        $(this).on('change',function(){
+            if ($(this).prop('checked') == true){
+                $('.' + check).prop("disabled", true);
+                $(this).prop("disabled", false);
+            }else{
+                
+                $('.' + check).prop("disabled", false);
+            }
+        })
+    });
 });
 
 

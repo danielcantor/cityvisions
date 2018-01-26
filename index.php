@@ -100,73 +100,75 @@
 											<div class="col-12">
 												<div class="zone">
 													<h4 class="zone-description">Seleccione la Zona para Programar la Válvula</h4>
+													<p class="zone-subtitle">Cada valvula puede ser asignada a solo una zona</p>
+
 													<div class="row">
 														<div class="col-2">
 															<p class="zone-title">Zona 1</p>
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z1-1" name="radio" type="checkbox" >
+																<input id="radio-z1-1" name="radio" type="checkbox" class="uno">
 																<label for="radio-z1-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-2" name="radio" type="checkbox">
+																<input id="radio-z1-2" name="radio" type="checkbox" class="dos">
 																<label  for="radio-z1-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-3" name="radio" type="checkbox">
+																<input id="radio-z1-3" name="radio" type="checkbox" class="tres">
 																<label for="radio-z1-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-4" name="radio" type="checkbox">
+																<input id="radio-z1-4" name="radio" type="checkbox" class="cuatro">
 																<label  for="radio-z1-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-5" name="radio" type="checkbox">
+																<input id="radio-z1-5" name="radio" type="checkbox" class="cinco">
 																<label for="radio-z1-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-6" name="radio" type="checkbox">
+																<input id="radio-z1-6" name="radio" type="checkbox" class="seis">
 																<label  for="radio-z1-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-7" name="radio" type="checkbox" >
+																<input id="radio-z1-7" name="radio" type="checkbox" class="siete">
 																<label for="radio-z1-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-8" name="radio" type="checkbox">
+																<input id="radio-z1-8" name="radio" type="checkbox" class="ocho">
 																<label  for="radio-z1-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-9" name="radio" type="checkbox" >
+																<input id="radio-z1-9" name="radio" type="checkbox" class="nueve">
 																<label for="radio-z1-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-10" name="radio" type="checkbox">
+																<input id="radio-z1-10" name="radio" type="checkbox" class="diez">
 																<label  for="radio-z1-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-11" name="radio" type="checkbox">
+																<input id="radio-z1-11" name="radio" type="checkbox" class="once">
 																<label for="radio-z1-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-12" name="radio" type="checkbox">
+																<input id="radio-z1-12" name="radio" type="checkbox" class="doce">
 																<label  for="radio-z1-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-13" name="radio" type="checkbox" >
+																<input id="radio-z1-13" name="radio" type="checkbox" class="trece">
 																<label for="radio-z1-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-14" name="radio" type="checkbox">
+																<input id="radio-z1-14" name="radio" type="checkbox" class="catorce">
 																<label  for="radio-z1-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-15" name="radio" type="checkbox">
+																<input id="radio-z1-15" name="radio" type="checkbox" class="quince">
 																<label for="radio-z1-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z1-16" name="radio" type="checkbox">
+																<input id="radio-z1-16" name="radio" type="checkbox" class="dieciseis">
 																<label  for="radio-z1-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -179,67 +181,67 @@
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z2-1" name="radio" type="checkbox" >
+																<input id="radio-z2-1" name="radio" type="checkbox" class="uno">
 																<label for="radio-z2-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-2" name="radio" type="checkbox">
+																<input id="radio-z2-2" name="radio" type="checkbox" class="dos">
 																<label  for="radio-z2-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-3" name="radio" type="checkbox">
+																<input id="radio-z2-3" name="radio" type="checkbox" class="tres">
 																<label for="radio-z2-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-4" name="radio" type="checkbox">
+																<input id="radio-z2-4" name="radio" type="checkbox" class="cuatro">
 																<label  for="radio-z2-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-5" name="radio" type="checkbox">
+																<input id="radio-z2-5" name="radio" type="checkbox" class="cinco">
 																<label for="radio-z2-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-6" name="radio" type="checkbox">
+																<input id="radio-z2-6" name="radio" type="checkbox" class="seis">
 																<label  for="radio-z2-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-7" name="radio" type="checkbox" >
+																<input id="radio-z2-7" name="radio" type="checkbox" class="siete">
 																<label for="radio-z2-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-8" name="radio" type="checkbox">
+																<input id="radio-z2-8" name="radio" type="checkbox" class="ocho">
 																<label  for="radio-z2-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-9" name="radio" type="checkbox" >
+																<input id="radio-z2-9" name="radio" type="checkbox" class="nueve">
 																<label for="radio-z2-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-10" name="radio" type="checkbox">
+																<input id="radio-z2-10" name="radio" type="checkbox" class="diez">
 																<label  for="radio-z2-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-11" name="radio" type="checkbox">
+																<input id="radio-z2-11" name="radio" type="checkbox" class="once">
 																<label for="radio-z2-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-12" name="radio" type="checkbox">
+																<input id="radio-z2-12" name="radio" type="checkbox" class="doce">
 																<label  for="radio-z2-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-13" name="radio" type="checkbox" >
+																<input id="radio-z2-13" name="radio" type="checkbox" class="trece">
 																<label for="radio-z2-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-14" name="radio" type="checkbox">
+																<input id="radio-z2-14" name="radio" type="checkbox" class="catorce">
 																<label  for="radio-z2-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-15" name="radio" type="checkbox">
+																<input id="radio-z2-15" name="radio" type="checkbox" class="quince">
 																<label for="radio-z2-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z2-16" name="radio" type="checkbox">
+																<input id="radio-z2-16" name="radio" type="checkbox" class="dieciseis">
 																<label  for="radio-z2-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -252,67 +254,67 @@
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z3-1" name="radio" type="checkbox">
+																<input id="radio-z3-1" name="radio" type="checkbox" class="uno">
 																<label for="radio-z3-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-2" name="radio" type="checkbox" >
+																<input id="radio-z3-2" name="radio" type="checkbox" class="dos">
 																<label  for="radio-z3-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-3" name="radio" type="checkbox">
+																<input id="radio-z3-3" name="radio" type="checkbox"class="tres">
 																<label for="radio-z3-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-4" name="radio" type="checkbox">
+																<input id="radio-z3-4" name="radio" type="checkbox"class="cuatro">
 																<label  for="radio-z3-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-5" name="radio" type="checkbox" >
+																<input id="radio-z3-5" name="radio" type="checkbox" class="cinco">
 																<label for="radio-z3-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-6" name="radio" type="checkbox">
+																<input id="radio-z3-6" name="radio" type="checkbox"class="seis">
 																<label  for="radio-z3-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-7" name="radio" type="checkbox">
+																<input id="radio-z3-7" name="radio" type="checkbox"class="siete">
 																<label for="radio-z3-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-8" name="radio" type="checkbox">
+																<input id="radio-z3-8" name="radio" type="checkbox"class="ocho">
 																<label  for="radio-z3-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-9" name="radio" type="checkbox">
+																<input id="radio-z3-9" name="radio" type="checkbox"class="nueve">
 																<label for="radio-z3-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-10" name="radio" type="checkbox" >
+																<input id="radio-z3-10" name="radio" type="checkbox" class="diez">
 																<label  for="radio-z3-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-11" name="radio" type="checkbox">
+																<input id="radio-z3-11" name="radio" type="checkbox"class="once">
 																<label for="radio-z3-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-12" name="radio" type="checkbox">
+																<input id="radio-z3-12" name="radio" type="checkbox"class="doce">
 																<label  for="radio-z3-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-13" name="radio" type="checkbox">
+																<input id="radio-z3-13" name="radio" type="checkbox"class="trece">
 																<label for="radio-z3-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-14" name="radio" type="checkbox">
+																<input id="radio-z3-14" name="radio" type="checkbox"class="catorce">
 																<label  for="radio-z3-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-15" name="radio" type="checkbox">
+																<input id="radio-z3-15" name="radio" type="checkbox"class="quince">
 																<label for="radio-z3-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z3-16" name="radio" type="checkbox">
+																<input id="radio-z3-16" name="radio" type="checkbox"class="dieciseis">
 																<label  for="radio-z3-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -325,67 +327,67 @@
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z4-1" name="radio" type="checkbox">
+																<input id="radio-z4-1" name="radio" type="checkbox"class="uno">
 																<label for="radio-z4-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-2" name="radio" type="checkbox">
+																<input id="radio-z4-2" name="radio" type="checkbox"class="dos">
 																<label  for="radio-z4-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-3" name="radio" type="checkbox">
+																<input id="radio-z4-3" name="radio" type="checkbox"class="tres">
 																<label for="radio-z4-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-4" name="radio" type="checkbox">
+																<input id="radio-z4-4" name="radio" type="checkbox"class="cuatro">
 																<label  for="radio-z4-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-5" name="radio" type="checkbox">
+																<input id="radio-z4-5" name="radio" type="checkbox"class="cinco">
 																<label for="radio-z4-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-6" name="radio" type="checkbox" >
+																<input id="radio-z4-6" name="radio" type="checkbox" class="seis">
 																<label  for="radio-z4-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-7" name="radio" type="checkbox">
+																<input id="radio-z4-7" name="radio" type="checkbox"class="siete">
 																<label for="radio-z4-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-8" name="radio" type="checkbox">
+																<input id="radio-z4-8" name="radio" type="checkbox"class="ocho">
 																<label  for="radio-z4-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-9" name="radio" type="checkbox">
+																<input id="radio-z4-9" name="radio" type="checkbox"class="nueve">
 																<label for="radio-z4-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-10" name="radio" type="checkbox">
+																<input id="radio-z4-10" name="radio" type="checkbox"class="diez">
 																<label  for="radio-z4-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-11" name="radio" type="checkbox">
+																<input id="radio-z4-11" name="radio" type="checkbox"class="once">
 																<label for="radio-z4-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-12" name="radio" type="checkbox">
+																<input id="radio-z4-12" name="radio" type="checkbox"class="doce">
 																<label  for="radio-z4-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-13" name="radio" type="checkbox">
+																<input id="radio-z4-13" name="radio" type="checkbox"class="trece">
 																<label for="radio-z4-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-14" name="radio" type="checkbox">
+																<input id="radio-z4-14" name="radio" type="checkbox"class="catorce">
 																<label  for="radio-z4-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-15" name="radio" type="checkbox">
+																<input id="radio-z4-15" name="radio" type="checkbox"class="quince">
 																<label for="radio-z4-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z4-16" name="radio" type="checkbox" >
+																<input id="radio-z4-16" name="radio" type="checkbox"class="dieciseis" >
 																<label  for="radio-z4-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -398,67 +400,67 @@
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z5-1" name="radio" type="checkbox">
+																<input id="radio-z5-1" name="radio" type="checkbox"class="uno">
 																<label for="radio-z5-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-2" name="radio" type="checkbox">
+																<input id="radio-z5-2" name="radio" type="checkbox"class="dos">
 																<label  for="radio-z5-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-3" name="radio" type="checkbox">
+																<input id="radio-z5-3" name="radio" type="checkbox"class="tres">
 																<label for="radio-z5-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-4" name="radio" type="checkbox" >
+																<input id="radio-z5-4" name="radio" type="checkbox" class="cuatro">
 																<label  for="radio-z5-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-5" name="radio" type="checkbox">
+																<input id="radio-z5-5" name="radio" type="checkbox"class="cinco">
 																<label for="radio-z5-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-6" name="radio" type="checkbox">
+																<input id="radio-z5-6" name="radio" type="checkbox"class="seis">
 																<label  for="radio-z5-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-7" name="radio" type="checkbox">
+																<input id="radio-z5-7" name="radio" type="checkbox"class="siete">
 																<label for="radio-z5-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-8" name="radio" type="checkbox">
+																<input id="radio-z5-8" name="radio" type="checkbox"class="ocho">
 																<label  for="radio-z5-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-9" name="radio" type="checkbox">
+																<input id="radio-z5-9" name="radio" type="checkbox"class="nueve">
 																<label for="radio-z5-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-10" name="radio" type="checkbox">
+																<input id="radio-z5-10" name="radio" type="checkbox"class="diez">
 																<label  for="radio-z5-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-11" name="radio" type="checkbox">
+																<input id="radio-z5-11" name="radio" type="checkbox"class="once">
 																<label for="radio-z5-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-12" name="radio" type="checkbox">
+																<input id="radio-z5-12" name="radio" type="checkbox"class="doce">
 																<label  for="radio-z5-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-13" name="radio" type="checkbox">
+																<input id="radio-z5-13" name="radio" type="checkbox"class="trece">
 																<label for="radio-z5-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-14" name="radio" type="checkbox" >
+																<input id="radio-z5-14" name="radio" type="checkbox" class="catorce">
 																<label  for="radio-z5-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-15" name="radio" type="checkbox" >
+																<input id="radio-z5-15" name="radio" type="checkbox" class="quince">
 																<label for="radio-z5-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z5-16" name="radio" type="checkbox">
+																<input id="radio-z5-16" name="radio" type="checkbox"class="dieciseis">
 																<label  for="radio-z5-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -471,67 +473,67 @@
 														</div>
 														<div class="col-10">
 															<div class="radio">
-																<input id="radio-z6-1" name="radio" type="checkbox">
+																<input id="radio-z6-1" name="radio" type="checkbox"class="uno">
 																<label for="radio-z6-1" class="radio-label">1</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-2" name="radio" type="checkbox">
+																<input id="radio-z6-2" name="radio" type="checkbox"class="dos">
 																<label  for="radio-z6-2" class="radio-label">2</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-3" name="radio" type="checkbox">
+																<input id="radio-z6-3" name="radio" type="checkbox"class="tres">
 																<label for="radio-z6-3" class="radio-label">3</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-4" name="radio" type="checkbox">
+																<input id="radio-z6-4" name="radio" type="checkbox"class="cuatro">
 																<label  for="radio-z6-4" class="radio-label">4</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-5" name="radio" type="checkbox">
+																<input id="radio-z6-5" name="radio" type="checkbox"class="cinco">
 																<label for="radio-z6-5" class="radio-label">5</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-6" name="radio" type="checkbox">
+																<input id="radio-z6-6" name="radio" type="checkbox"class="seis">
 																<label  for="radio-z6-6" class="radio-label">6</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-7" name="radio" type="checkbox">
+																<input id="radio-z6-7" name="radio" type="checkbox"class="siete">
 																<label for="radio-z6-7" class="radio-label">7</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-8" name="radio" type="checkbox">
+																<input id="radio-z6-8" name="radio" type="checkbox"class="ocho">
 																<label  for="radio-z6-8" class="radio-label">8</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-9" name="radio" type="checkbox">
+																<input id="radio-z6-9" name="radio" type="checkbox"class="nueve">
 																<label for="radio-z6-9" class="radio-label">9</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-10" name="radio" type="checkbox">
+																<input id="radio-z6-10" name="radio" type="checkbox"class="diez">
 																<label  for="radio-z6-10" class="radio-label">10</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-11" name="radio" type="checkbox" >
+																<input id="radio-z6-11" name="radio" type="checkbox" class="once">
 																<label for="radio-z6-11" class="radio-label">11</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-12" name="radio" type="checkbox" >
+																<input id="radio-z6-12" name="radio" type="checkbox" class="doce">
 																<label  for="radio-z6-12" class="radio-label">12</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-13" name="radio" type="checkbox">
+																<input id="radio-z6-13" name="radio" type="checkbox"class="trece">
 																<label for="radio-z6-13" class="radio-label">13</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-14" name="radio" type="checkbox">
+																<input id="radio-z6-14" name="radio" type="checkbox"class="catorce">
 																<label  for="radio-z6-14" class="radio-label">14</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-15" name="radio" type="checkbox">
+																<input id="radio-z6-15" name="radio" type="checkbox"class="quince">
 																<label for="radio-z6-15" class="radio-label">15</label>
 															</div>
 															<div class="radio">
-																<input id="radio-z6-16" name="radio" type="checkbox">
+																<input id="radio-z6-16" name="radio" type="checkbox"class="dieciseis">
 																<label  for="radio-z6-16" class="radio-label">16</label>
 															</div>
 														</div>
@@ -545,37 +547,37 @@
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 1</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 2</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 3</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 4</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 5</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 														<div class="col-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 6</label>
-																<input type="text" class="form-control">
+																<input type="number" class="form-control" min="1" max="24">
 															</div>
 														</div>
 													</div>
