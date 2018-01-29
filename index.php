@@ -23,9 +23,9 @@
 						<li><a href="#Inicio"><span class="icon inicio"></span>Inicio</a></li>
 						<li class="Nav-submenu">Modo de Funcionamiento
 							<ul>
-								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
-								<li><a href="#"><span class="icon manual"></span>Manual</a></li>
-								<li><a href="#"><span class="icon apagado"></span>Apagado</a></li>
+								<li><a data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
+								<li><a><span class="icon manual"></span>Manual</a></li>
+								<li><a><span class="icon apagado"></span>Apagado</a></li>
 							</ul>
 						</li>
 						<li><a href="#Programador"><span class="icon programador"></span>Programador</a></li>
@@ -69,7 +69,7 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div id="">
                                     <?php include('inc/tabla.php') ?>
                                     
 									</div>
@@ -839,6 +839,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
 	$(document).ready( ()  => {
+	
 		$('.valvula').click(function() {
 		var	id = $(this).attr('id');
 		var data = $.ajax({

@@ -62,6 +62,24 @@ $('document').ready(function(){
             }
         })
     });
+    $("#reload").on("click",".manual-toggle", function () {
+        var id = $(this).attr('id');
+        var alt = $(this).children("img").attr("alt");
+        $.ajax({
+            type: 'post',
+            url: 'inc/botones_manual.php',
+            data: {
+                'valv': id,
+                'estado': alt
+            },
+            success: function (w) {
+                console.log(w);
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+            }
+        });
+    });
 });
 
 
