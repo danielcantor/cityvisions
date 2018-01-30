@@ -73,7 +73,7 @@ $('document').ready(function(){
                 'estado': alt
             },
             success: function (w) {
-                console.log(w);
+                
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
                 });

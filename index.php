@@ -847,16 +847,13 @@
 			url: "inc/graficas.php",
 			data:{'sensor' : 'sensor'+id},
 			dataType:"json",
-			async: false
-		}).responseText;
-		console.log(data);
+			success:function(data){
 		$('#sensor').text(id);
 		$('.reload').attr('id',id);
-		var infoGraf = JSON.parse(data);
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawChart);
 		function drawChart() {
-			var datas = google.visualization.arrayToDataTable(infoGraf);
+			var datas = google.visualization.arrayToDataTable(data);
 			var options = {
 				curveType: 'function',
 				legend: { position: 'top' }
@@ -865,6 +862,10 @@
 			var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 			chart.draw(datas, options);
 		}
+			}
+		});
+		
+		
 			});
 		
 		$('.reload').click(function() {
@@ -874,22 +875,23 @@
 			url: "inc/graficas.php",
 			data:{'sensor' : 'sensor'+id},
 			dataType:"json",
-			async: false
-		}).responseText;
-		$('#sensor').text(id);
-		var infoGraf = JSON.parse(data);
-		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(drawChart);
-		function drawChart() {
-			var datas = google.visualization.arrayToDataTable(infoGraf);
-			var options = {
-				curveType: 'function',
-				legend: { position: 'top' }
-			};
+			success: function(data){
+				$('#sensor').text(id);
+						google.charts.load('current', {'packages':['corechart']});
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart() {
+							var datas = google.visualization.arrayToDataTable(data);
+							var options = {
+								curveType: 'function',
+								legend: { position: 'top' }
+							};
 
-			var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-			chart.draw(datas, options);
-		}
+							var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+							chart.draw(datas, options);
+						}
+			}
+		});
+		
 			});
 
 		});
