@@ -5,11 +5,13 @@
             $i = 1;
             while($assoc){
             ?>
-            <div class="col-2">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2"
 					<div class="Section-article">
 					<a data-toggle="modal" data-target="#sensor-history" class="valvula Sensor<?php echo $i; ?>" id="<?php echo $i; ?>">
-					<img class="img-fluid" src="img/sensor.png" alt="Sensor <?php echo $i; ?>: <?php echo $assoc['sensor'.$i]; ?> humedad"/>
-					<p class="article-value" id="nombre-valv"><?php echo $assoc['sensor'.$i]; ?></p>
+                        <div class="article-sensor">
+        					<img class="img-fluid" src="img/sensor.png" alt="Sensor <?php echo $i; ?>: <?php echo $assoc['sensor'.$i]; ?> humedad"/>
+        					<p class="article-value" id="nombre-valv"><?php echo $assoc['sensor'.$i]; ?></p>
+                        </div>
 			        <p class="article-name">Sensor <?php echo $i; ?></p>
 				</a>
 			</div>
