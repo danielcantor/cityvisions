@@ -48,6 +48,99 @@ $('document').ready(function(){
             }            
         }
     });
+    $('#activar').click(function(){
+        if(horario == 1){
+            var hora = $('#hora1').val();
+            var minuto = $('#min1').val();
+            var segundo = $('#seg1').val();
+            var zona = $('#hor1').val();
+            var duracion = $('#tim1').val();
+            $.ajax({
+                type: 'post',
+                url: 'inc/automatico.php',
+                data: {
+                    'hora': hora,
+                    'minuto': minuto,
+                    'segundo': segundo,
+                    'zona': zona,
+                    'duracion': duracion
+                },
+                success: function (w) {
+                    $('#resp-down').removeClass('d-none');
+                    $("#respuesta").html(w);
+                    setTimeout(function(){
+                        $('#respuesta').alert('close');
+                    }, 6000);
+                }
+            });
+            if (horario == 2) {
+                var hora2 = $('#hora2').val();
+                var minuto2 = $('#min2').val();
+                var segundo2 = $('#seg2').val();
+                var zona2 = $('#tim2').val();
+                var duracion2 = $('#ciclo2').val();
+                $.ajax({
+                    type: 'post',
+                    url: 'inc/automatico.php',
+                    data: {
+                        'horario': horario,
+                        'hora': hora,
+                        'minuto': minuto,
+                        'segundo': segundo,
+                        'zona': zona,
+                        'duracion': duracion,
+                        'hora2': hora2,
+                        'minuto2': minuto2,
+                        'segundo2': segundo2,
+                        'zona2': zona2,
+                        'duracion2': duracion2
+                    }, success: function (w) {
+                        $('#resp-down').removeClass('d-none');
+                        $("#respuesta").html(w);
+                        setTimeout(function () {
+                            $('#respuesta').alert('close');
+                        }, 6000);
+                    }
+                });
+                if (horario == 3) {
+                    var hora3 = $('#hora3').val();
+                    var minuto3 = $('#min3').val();
+                    var segundo3 = $('#seg3').val();
+                    var zona3 = $('#tim3').val();
+                    var duracion3 = $('#ciclo3').val();
+                    $.ajax({
+                        type: 'post',
+                        url: 'inc/automatico.php',
+                        data: {
+                            'hora': hora,
+                            'minuto': minuto,
+                            'segundo': segundo,
+                            'zona': zona,
+                            'duracion': duracion,
+                            'hora2': hora2,
+                            'minuto2': minuto2,
+                            'segundo2': segundo2,
+                            'zona2': zona2,
+                            'duracion2': duracion2,
+                            'hora3': hora3,
+                            'minuto3': minuto3,
+                            'segundo3': segundo3,
+                            'zona3': zona3,
+                            'duracion3': duracion3
+                        }, success: function (w) {
+                            $('#resp-down').removeClass('d-none');
+                            $("#respuesta").html(w);
+                            setTimeout(function () {
+                                $('#respuesta').alert('close');
+                            }, 6000);
+                        }
+                    });
+                }
+            }
+        }
+
+    });
+
     $('*:checkbox').click(function(){
         var check=$(this).attr('class');
         $('.' + check).prop("disabled", true);
