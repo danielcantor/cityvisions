@@ -5,7 +5,7 @@
             $i = 1;
             while($assoc){
             ?>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2"
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
 					<div class="Section-article">
 					<a data-toggle="modal" data-target="#sensor-history" class="valvula Sensor<?php echo $i; ?>" id="<?php echo $i; ?>">
                         <div class="article-sensor">
