@@ -592,7 +592,11 @@
 															<div class="form-group">
 																<label class="zone-title">Zona 6</label>
 																<input type="number" class="form-control" min="1" max="24">
+																
 															</div>
+														</div>
+														<div class="col-12">
+														<button class="btn btn-primary mx-auto d-block" id="autom">Activar</button>
 														</div>
 													</div>
 												</div>
@@ -845,61 +849,8 @@
 	</div>       
 
     <script src="js/jquery.2.2.4.min.js"></script>
-    <script type="text/javascript" src="js/llamada.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-		$(document).ready( ()  => {
-			$('.valvula').click(function() {
-				var	id = $(this).attr('id');
-				var data = $.ajax({
-					type: "post",
-					url: "inc/graficas.php",
-					data:{'sensor' : 'sensor'+id},
-					dataType:"json",
-					success:function(data){
-						$('#sensor').text(id);
-						$('.reload').attr('id',id);
-						google.charts.load('current', {'packages':['corechart']});
-						google.charts.setOnLoadCallback(drawChart);
-						function drawChart() {
-							var datas = google.visualization.arrayToDataTable(data);
-							var options = {
-								curveType: 'function',
-								legend: { position: 'top' }
-							};
-
-							var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-							chart.draw(datas, options);
-						}
-					}
-				});
-			});
-			$('.reload').click(function() {
-				var	id = $(this).attr('id');
-				var data = $.ajax({
-					type: "post",
-					url: "inc/graficas.php",
-					data:{'sensor' : 'sensor'+id},
-					dataType:"json",
-					success: function(data){
-						$('#sensor').text(id);
-						google.charts.load('current', {'packages':['corechart']});
-						google.charts.setOnLoadCallback(drawChart);
-						function drawChart() {
-							var datas = google.visualization.arrayToDataTable(data);
-							var options = {
-								curveType: 'function',
-								legend: { position: 'top' }
-							};
-
-							var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-							chart.draw(datas, options);
-						}
-					}
-				});
-			});
-		});
-	</script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="js/llamada.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scroll.js"></script>
