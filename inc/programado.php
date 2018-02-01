@@ -58,7 +58,7 @@
 
         include_once('conexion.php');
         $con=mysqli_query($enlace,'INSERT INTO valvulas_por_zonas (fecha,zona_val1,zona_val2,zona_val3,zona_val4,zona_val5,zona_val6,zona_val7,zona_val8,zona_val9,zona_val10,zona_val11,zona_val12,zona_val13,zona_val14,zona_val15,zona_val16) VALUES (NOW(),'.valor($val1).','.valor($val2).','.valor($val3).','.valor($val4).','.valor($val5).','.valor($val6).','.valor($val7).','.valor($val8).','.valor($val9).','.valor($val10).','.valor($val11).','.valor($val12).','.valor($val13).','.valor($val14).','.valor($val15).','.valor($val16).')');
-
+        $con2=mysqli_query($enlace,'INSERT INTO modo_activo (tiempo,m_programado) values(NOW(),1)');
         if($con){
          echo "configuracion programada hecha exitosamente";
          mysqli_close($enlace);

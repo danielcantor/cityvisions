@@ -186,7 +186,9 @@ $('document').ready(function(){
             },
             success: function (w) {
                 $('#resp-down').removeClass('d-none');
-                $("#modo").html('Programado');
+                $.post("inc/modo.php", function (htmlexterno) {
+                    $("#modo").html(htmlexterno);
+                });
                 $("#respuesta").html(w);
                 setTimeout(function () {
                     $('#respuesta').alert('close');
@@ -206,6 +208,7 @@ $('document').ready(function(){
                 type: 'post',
                 url: 'inc/automatico.php',
                 data: {
+                    'horario': horario,
                     'hora': hora,
                     'minuto': minuto,
                     'segundo': segundo,
@@ -214,7 +217,9 @@ $('document').ready(function(){
                 },
                 success: function (w) {
                     $('#resp-down').removeClass('d-none'); 
-                    $("#modo").html('Automatico');
+                    $.post("inc/modo.php", function (htmlexterno) {
+                        $("#modo").html(htmlexterno);
+                    });
                     $("#respuesta").html(w);
                     setTimeout(function(){
                         $('#respuesta').alert('close');
@@ -245,7 +250,9 @@ $('document').ready(function(){
                     'duracion2': duracion2
                 }, success: function (w) {
                     $('#resp-down').removeClass('d-none');
-                    $("#modo").html('Automatico');
+                    $.post("inc/modo.php", function (htmlexterno) {
+                        $("#modo").html(htmlexterno);
+                    });
                     $("#respuesta").html(w);
                     setTimeout(function () {
                         $('#respuesta').alert('close');
@@ -280,7 +287,9 @@ $('document').ready(function(){
                     'duracion3': duracion3
                 }, success: function (w) {
                     $('#resp-down').removeClass('d-none');
-                    $("#modo").html('Automatico');
+                    $.post("inc/modo.php", function (htmlexterno) {
+                        $("#modo").html(htmlexterno);
+                    });
                     $("#respuesta").html(w);
                     setTimeout(function () {
                         $('#respuesta').alert('close');
@@ -305,6 +314,7 @@ $('document').ready(function(){
             }
         })
     });
+    //cambio de activo/inactivo modo manual
     $("#reload").on("click",".manual-toggle", function () {
         var id = $(this).attr('id');
         var alt = $(this).children("img").attr("alt");

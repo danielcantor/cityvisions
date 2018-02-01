@@ -11,15 +11,15 @@ switch ($_POST['horario']) {
         $segundo2 = $_POST['segundo2'];
         $zona2 = $_POST['zona2'];
         $duracion2 = $_POST['duracion2'];
-         if($horario == 'pm'){
+         if($zona == 'pm'){
         $hora = $hora + 12;
       }
-        if($horario2 == 'pm'){
+        if($zona2 == 'pm'){
         $hora2 = $hora2 + 12;
       }
         include_once('conexion.php');
         $con=mysqli_query($enlace,'INSERT INTO nuevo_horario (fecha,hora_1,min_1,seg_1,duracion_1,hora_2,min_2,seg_2,duracion_2) VALUES (NOW(),'.$hora.','.$minuto.','.$segundo.','.$duracion.','.$hora2.','.$minuto2.','.$segundo2.','.$duracion2.')');
-
+        $con2=mysqli_query($enlace,'INSERT INTO modo_activo (fecha,m_automatico) values(NOW(),1)');
     break;
   case '3':
         $hora = $_POST['hora'];
@@ -37,18 +37,18 @@ switch ($_POST['horario']) {
         $segundo3 = $_POST['segundo3'];
         $zona3 = $_POST['zona3'];
         $duracion3 = $_POST['duracion3'];
-        if($horario == 'pm'){
+        if($zona == 'pm'){
         $hora = $hora + 12;
       }
-        if($horario2 == 'pm'){
+        if($zona2 == 'pm'){
         $hora2 = $hora2 + 12;
       }
-       if($horario3 == 'pm'){
+       if($zona3 == 'pm'){
         $hora2 = $hora2 + 12;
       }
         include_once('conexion.php');
         $con=mysqli_query($enlace,'INSERT INTO nuevo_horario (fecha,hora_1,min_1,seg_1,duracion_1,hora_2,min_2,seg_2,duracion_2,hora_3,min_3,seg_3,duracion_3) VALUES (NOW(),'.$hora.','.$minuto.','.$segundo.','.$duracion.','.$hora2.','.$minuto2.','.$segundo2.','.$duracion2.','.$hora3.','.$minuto3.','.$segundo3.','.$duracion3.')');
-
+        $con2=mysqli_query($enlace,'INSERT INTO modo_activo (tiempo,m_automatico) values(NOW(),1)');
     break;
     
   default:
@@ -57,12 +57,12 @@ switch ($_POST['horario']) {
       $segundo = $_POST['segundo'];
       $zona = $_POST['zona'];
       $duracion = $_POST['duracion'];
-      if($horario == 'pm'){
+      if($zona == 'pm'){
         $hora = $hora + 12;
       }
       include_once('conexion.php');
       $con=mysqli_query($enlace,'INSERT INTO nuevo_horario (fecha,hora_1,min_1,seg_1,duracion_1) VALUES (NOW(),'.$hora.','.$minuto.','.$segundo.','.$duracion.')');
-
+      $con2=mysqli_query($enlace,'INSERT INTO modo_activo (tiempo,m_automatico) values(NOW(),1)');
     break;
 }
         if($con){
