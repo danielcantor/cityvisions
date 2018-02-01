@@ -186,6 +186,7 @@ $('document').ready(function(){
             },
             success: function (w) {
                 $('#resp-down').removeClass('d-none');
+                $("#modo").html('Programado');
                 $("#respuesta").html(w);
                 setTimeout(function () {
                     $('#respuesta').alert('close');
@@ -212,7 +213,8 @@ $('document').ready(function(){
                     'duracion': duracion
                 },
                 success: function (w) {
-                    $('#resp-down').removeClass('d-none');
+                    $('#resp-down').removeClass('d-none'); 
+                    $("#modo").html('Automatico');
                     $("#respuesta").html(w);
                     setTimeout(function(){
                         $('#respuesta').alert('close');
@@ -243,6 +245,7 @@ $('document').ready(function(){
                     'duracion2': duracion2
                 }, success: function (w) {
                     $('#resp-down').removeClass('d-none');
+                    $("#modo").html('Automatico');
                     $("#respuesta").html(w);
                     setTimeout(function () {
                         $('#respuesta').alert('close');
@@ -277,6 +280,7 @@ $('document').ready(function(){
                     'duracion3': duracion3
                 }, success: function (w) {
                     $('#resp-down').removeClass('d-none');
+                    $("#modo").html('Automatico');
                     $("#respuesta").html(w);
                     setTimeout(function () {
                         $('#respuesta').alert('close');

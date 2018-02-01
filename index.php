@@ -76,7 +76,7 @@
 									<div class="Section-header">
 										<div class="row justify-content-between align-items-center">
 											<div class="col-12 col-sm-7 col-md-5">
-												<h2 class="Section-title">Modo de Funcionamiento del Sistema: <span class="modo-activo">Manual</span></h2>
+												<h2 class="Section-title">Modo de Funcionamiento del Sistema: <span class="modo-activo" id="modo"></span></h2>
 											</div>
 											<div class="col-12 col-sm-5 col-md-7">
 												<div class="Section-extra">

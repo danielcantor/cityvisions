@@ -72,6 +72,4 @@ switch ($_POST['horario']) {
          echo "configuracion automatica devolvio un error por favor intente mas tarde";
          mysqli_close($enlace);
        }
-  }
-
 ?>
