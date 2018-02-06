@@ -15,38 +15,38 @@ $('document').ready(function(){
     // visualizacion modo automatico
     var horario= $('#horarios').val();
     if(horario == 1){
-    $('#hor2').fadeOut('fast');
-    $('#hor3').fadeOut('fast');
-    $('#hor2').addClass('hide');
-    $('#hor3').addClass('hide');
+    $('#horario2').fadeOut('fast');
+    $('#horario3').fadeOut('fast');
+    $('#horario2').addClass('hide');
+    $('#horario3').addClass('hide');
     }
     $('#horarios').change(function(){
         horario=$(this).val();
         if(horario == 1){
-            $('#hor2').fadeOut('fast');
-            $('#hor3').fadeOut('fast');
-            $('#hor2').addClass('hide');
-            $('#hor3').addClass('hide');
+            $('#horario2').fadeOut('fast');
+            $('#horario3').fadeOut('fast');
+            $('#horario2').addClass('hide');
+            $('#horario3').addClass('hide');
         }
         if(horario == 2){
             
-            if($('#hor3').hasClass('hide') == false){
-                $('#hor3').fadeOut('fast');
-                $('#hor3').addClass('hide');
+            if ($('#horario3').hasClass('hide') == false){
+                $('#horario3').fadeOut('fast');
+                $('#horario3').addClass('hide');
             }else{
-                $('#hor2').fadeIn('fast');
-                $('#hor2').removeClass('hide');
+                $('#horario2').fadeIn('fast');
+                $('#horario2').removeClass('hide');
             }
         }
         if(horario == 3){
-            if($('#hor2').hasClass('hide') == true){
-                $('#hor2').fadeIn('fast');
-                $('#hor2').removeClass('hide');
-                $('#hor3').fadeIn('fast');
-                $('#hor3').removeClass('hide');
+            if ($('#horario2').hasClass('hide') == true){
+                $('#horario2').fadeIn('fast');
+                $('#horario2').removeClass('hide');
+                $('#horario3').fadeIn('fast');
+                $('#horario3').removeClass('hide');
             }else{
-                $('#hor3').fadeIn('fast');
-                $('#hor3').removeClass('hide');
+                $('#horario3').fadeIn('fast');
+                $('#horario3').removeClass('hide');
             }            
         }
     });
@@ -203,7 +203,7 @@ $('document').ready(function(){
             var minuto = $('#min1').val();
             var segundo = $('#seg1').val();
             var zona = $('#hor1').val();
-            var duracion = $('#tim1').val();
+            var duracion = $('#ciclo1').val();
             $.ajax({
                 type: 'post',
                 url: 'inc/automatico.php',
@@ -228,10 +228,15 @@ $('document').ready(function(){
             });
         }
         if (horario == 2) {
+            var hora = $('#hora1').val();
+            var minuto = $('#min1').val();
+            var segundo = $('#seg1').val();
+            var zona = $('#hor1').val();
+            var duracion = $('#ciclo1').val();
             var hora2 = $('#hora2').val();
             var minuto2 = $('#min2').val();
             var segundo2 = $('#seg2').val();
-            var zona2 = $('#tim2').val();
+            var zona2 = $('#hor2').val();
             var duracion2 = $('#ciclo2').val();
             $.ajax({
                 type: 'post',
@@ -261,10 +266,20 @@ $('document').ready(function(){
             });
         }
         if (horario == 3) {
+            var hora = $('#hora1').val();
+            var minuto = $('#min1').val();
+            var segundo = $('#seg1').val();
+            var zona = $('#hor1').val();
+            var duracion = $('#ciclo1').val();
+            var hora2 = $('#hora2').val();
+            var minuto2 = $('#min2').val();
+            var segundo2 = $('#seg2').val();
+            var zona2 = $('#hor2').val();
+            var duracion2 = $('#ciclo2').val();
             var hora3 = $('#hora3').val();
             var minuto3 = $('#min3').val();
             var segundo3 = $('#seg3').val();
-            var zona3 = $('#tim3').val();
+            var zona3 = $('#hor3').val();
             var duracion3 = $('#ciclo3').val();
             $.ajax({
                 type: 'post',
@@ -314,6 +329,72 @@ $('document').ready(function(){
             }
         })
     });
+    $('#actmanual').click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'post',
+            url: 'inc/manual.php',
+            data: {
+                'manual': 1
+            }, success: function (w) {
+                $('#resp-down').removeClass('d-none');
+                $.post("inc/modo.php", function (htmlexterno) {
+                    $("#modo").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $("#respuesta").html(w);
+                setTimeout(function () {
+                    $('#respuesta').alert('close');
+                }, 6000);
+            }
+    })
+})
+    $('#apagar').click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'post',
+            url: 'inc/apagar.php',
+            data: {
+                'apagar': 1
+            }, success: function (w) {
+                $('#resp-down').removeClass('d-none');
+                $.post("inc/modo.php", function (htmlexterno) {
+                    $("#modo").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $("#respuesta").html(w);
+                setTimeout(function () {
+                    $('#respuesta').alert('close');
+                }, 6000);
+            }
+        })
+    })
+    $('#si').click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'post',
+            url: 'inc/apagar.php',
+            data: {
+                'apagar': 1
+            }, success: function (w) {
+                $('#resp-down').removeClass('d-none');
+                $.post("inc/modo.php", function (htmlexterno) {
+                    $("#modo").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $("#respuesta").html(w);
+                setTimeout(function () {
+                    $('#respuesta').alert('close');
+                }, 6000);
+            }
+        })
+    })
     //cambio de activo/inactivo modo manual
     $("#reload").on("click",".manual-toggle", function () {
         var id = $(this).attr('id');

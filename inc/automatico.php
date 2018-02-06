@@ -19,7 +19,7 @@ switch ($_POST['horario']) {
       }
         include_once('conexion.php');
         $con=mysqli_query($enlace,'INSERT INTO nuevo_horario (fecha,hora_1,min_1,seg_1,duracion_1,hora_2,min_2,seg_2,duracion_2) VALUES (NOW(),'.$hora.','.$minuto.','.$segundo.','.$duracion.','.$hora2.','.$minuto2.','.$segundo2.','.$duracion2.')');
-        $con2=mysqli_query($enlace,'INSERT INTO modo_activo (fecha,m_automatico) values(NOW(),1)');
+        $con2=mysqli_query($enlace,'INSERT INTO modo_activo (tiempo,m_automatico) values(NOW(),1)');
     break;
   case '3':
         $hora = $_POST['hora'];
