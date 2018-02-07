@@ -178,6 +178,11 @@ a:not([href]):not([tabindex]):hover {
 }
 .modo-activo { font-weight: bold; }
 .modal-title { font-weight: bold; }
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #3dafaa;
+	font-weight: bold;
+}
+.nav-link { color: rgb(100,100,100); }
 .radio {
 	display: inline-block;
 	margin: 0.5rem .7rem;
@@ -223,6 +228,9 @@ a:not([href]):not([tabindex]):hover {
 	color: #00bcd4;
 	font-size: 1.5rem
 }
+.tab-content { margin: 2rem; }
+.tab-content label { color: rgb(180,180,180); }
+.tab-content button { margin-top: 1rem; }
 .time {
 	color: #666;
 	font-size: 1.5rem
