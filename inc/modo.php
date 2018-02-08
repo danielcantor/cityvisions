@@ -14,4 +14,5 @@
     if($row['m_apagado'] == 1){
         echo "Apagado";
     }
+    mysqli_close($enlace);
 ?>

@@ -12,6 +12,19 @@ $('document').ready(function(){
 
     }
         setTimeout(hora(),60000);
+    //countdown  
+    function countdown() {
+        $.ajax({
+            type: 'post',
+            url: 'inc/countdown.php',
+            success: function (w) {
+                $('#countdown').html(w);
+                setTimeout(countdown(), 60000);
+            }
+        });
+
+    }
+    setTimeout(countdown(), 60000);
     // visualizacion modo automatico
     var horario= $('#horarios').val();
     if(horario == 1){
@@ -103,6 +116,12 @@ $('document').ready(function(){
     });
     // modo programado
     $('#autom').click(function(){
+        var zona1 = $("#zona1").attr('id');
+        var zona2 = $("#zona2").attr('id');
+        var zona3 = $("#zona3").attr('id');
+        var zona4 = $("#zona4").attr('id');
+        var zona5 = $("#zona5").attr('id');
+        var zona6 = $("#zona6").attr('id');
         var array = [];
         $('.col-12 .zone *:checkbox').each(function () {
             if ($(this).prop('checked') == true) {
@@ -167,6 +186,12 @@ $('document').ready(function(){
             type: 'post',
             url: 'inc/programado.php',
             data: {
+                'zona1' : zona1,
+                'zona2': zona2,
+                'zona3': zona3,
+                'zona4': zona4,
+                'zona5': zona5,
+                'zona6': zona6,
                 'zona_val1' : array['zona_val1'], 
                 'zona_val2': array['zona_val2'],
                 'zona_val3': array['zona_val3'],
@@ -188,6 +213,15 @@ $('document').ready(function(){
                 $('#resp-down').removeClass('d-none');
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -218,6 +252,18 @@ $('document').ready(function(){
                     $('#resp-down').removeClass('d-none'); 
                     $.post("inc/modo.php", function (htmlexterno) {
                         $("#modo").html(htmlexterno);
+                    });
+                    $.post("inc/countdown.php", function (htmlexterno) {
+                        $("#countdown").html(htmlexterno);
+                    });
+                    $.post("inc/reload.php", function (htmlexterno) {
+                        $("#reload").html(htmlexterno);
+                    });
+                    $.post("inc/menu.php", function (htmlexterno) {
+                        $("#menu").html(htmlexterno);
+                    });
+                    $.post("inc/auto_modal.php", function (htmlexterno) {
+                        $("body").html(htmlexterno);
                     });
                     $("#respuesta").html(w);
                     setTimeout(function(){
@@ -257,6 +303,18 @@ $('document').ready(function(){
                 $('#resp-down').removeClass('d-none');
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
+                });
+                $.post("inc/auto_modal.php", function (htmlexterno) {
+                    $("body").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -306,6 +364,18 @@ $('document').ready(function(){
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
                 });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
+                });
+                $.post("inc/auto_modal.php", function (htmlexterno) {
+                    $("body").html(htmlexterno);
+                });
                 $("#respuesta").html(w);
                 setTimeout(function () {
                     $('#respuesta').alert('close');
@@ -341,8 +411,14 @@ $('document').ready(function(){
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
                 });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -365,6 +441,12 @@ $('document').ready(function(){
                 });
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
+                });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {

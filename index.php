@@ -19,24 +19,8 @@
 					<img class="img-fluid" src="img/logo-cityvision.png" alt="CityVision"/>
 				</figure>
 				<nav>
-					<ul class="Nav-main">
-						<li><a href="#Inicio"><span class="icon inicio"></span>Inicio</a></li>
-						<li class="Nav-submenu d-none d-sm-block">Modo de Funcionamiento
-							<ul>
-								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
-								<li><a href="#" id="actmanual"><span class="icon manual"></span>Manual</a></li>
-								<li><a href="#" id="apagar"><span class="icon apagado"></span>Apagado</a></li>
-							</ul>
-						</li>
-						<li><a href="#Programador"><span class="icon programador"></span>Programador</a></li>
-						<li><a href="#Humedad"><span class="icon humedad"></span>Humedad</a></li>
-						<li class="Nav-submenu d-block d-sm-none">
-							<ul>
-								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
-								<li><a href="#"><span class="icon manual"></span>Manual</a></li>
-								<li><a href="#"><span class="icon apagado"></span>Apagado</a></li>
-							</ul>
-						</li>
+					<ul class="Nav-main" id="menu">
+						<?php include('inc/menu.php'); ?>
 					</ul>
 				</nav>
 			</header>
@@ -62,7 +46,7 @@
 								<p>hora actual</p>
 							</div>
 							<div class="col-6 col-md-3 col-lg-2">
-								<p class="Dashboard-title riego">2:20 a.m.</p>
+								<p class="Dashboard-title riego" id="countdown"></p>
 								<p>próximo riego</p>
 							</div>
 						</div>
@@ -81,7 +65,7 @@
 											<div class="col-12 col-sm-5 col-md-7">
 												<div class="Section-extra">
 													<a href="#" data-toggle="modal" data-target="#automatico-single">Iniciar todas las válvulas</a>
-													<a href="#" data-toggle="modal" data-target="#shutdown-modal">Apagar todas las válvulas</a>
+													<a href="#"  data-toggle="modal" data-target="#shutdown-modal">Apagar todas las válvulas</a>
 												</div>
 											</div>
 										</div>
@@ -115,7 +99,7 @@
 											<div class="col-12">
 												<div class="zone">
 													<h4 class="zone-description">Seleccione la Zona para Programar la Válvula</h4>
-													<p class="zone-subtitle">Cada valvula puede ser asignada a solo una zona</p>
+													<p class="zone-subtitle">Cada válvula puede ser asignada a solo una zona</p>
 													<div class="row align-items-center">
 														<div class="col-12 col-md-2">
 															<p class="zone-title">Zona 1</p>
@@ -556,42 +540,42 @@
 											</div>
 											<div class="col-12">
 												<div class="zone">
-													<h4 class="zone-description">Tiempo del Ciclo <small>Los valores van desde 1 a 24 minutos</small></h4>
+													<h4 class="zone-description">Tiempo del Ciclo <small>Seleccione el tiempo de encendido de las zonas</small></h4>
 													<div class="row">
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 1</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona1">
 															</div>
 														</div>
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 2</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona2">
 															</div>
 														</div>
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 3</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona3">
 															</div>
 														</div>
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 4</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona4">
 															</div>
 														</div>
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 5</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona5">
 															</div>
 														</div>
 														<div class="col-6 col-sm-4 col-lg-2">
 															<div class="form-group">
 																<label class="zone-title">Zona 6</label>
-																<input type="number" class="form-control" min="1" max="24">
+																<input type="number" class="form-control" min="1" max="24" id="zona6">
 																
 															</div>
 														</div>
@@ -680,195 +664,12 @@
 					<p>¿Está seguro qué desea apagar todas las válvulas activas y no apagar una en particular?</p>
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-success px-3" id="si">Si</button> <button class="btn btn-danger px-3" data-dismiss="modal">No</button>
+					<button class="btn btn-success px-3" id="si" data-dismiss="modal">Si</button> <button class="btn btn-danger px-3" data-dismiss="modal">No</button>
 				</div>
 			</div>
 		</div>
 	</div> 
-	<div class="modal fade" id="automatico-single" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Configuración</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-				<p class=""><small>Si va a activar varios modulos configure los tiempos y use el boton de activar segun el modulo final</small></p>
-					<div class="nav nav-tabs" id="nav-tab" role="tablist">
-						<a class="nav-item nav-link active" data-toggle="tab" href="#modulo-1" role="tab" aria-selected="true">Módulo 1</a>
-						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-2" role="tab" aria-selected="false">Módulo 2</a>
-						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-3" role="tab" aria-selected="false">Módulo 3</a>
-					</div>
-					<div class="tab-content" id="nav-tabContent">
-						<div class="tab-pane fade show active" id="modulo-1" role="tabpanel">
-							<form class="form-row">
-								<div class="form-group col-md-12">
-									<h4>Primer Ciclo</h4>
-								</div>
-								<!-- <div class="form-group col-md-6">
-									<label for="horarios">Número de horarios</label>
-									<select class="form-control" id="horarios">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-									</select>
-								</div> -->
-								<div class="form-group col-md-3">
-									<label for="hora1">Hora</label>
-									<select class="form-control" id="hora1">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-									</select>
-								</div>
-								<div class="form-group col-md-3">
-									<label for="min1">Minutos</label>
-									<select class="form-control" id="min1">
-										<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-									</select>
-								</div>
-								<div class="form-group col-md-3">
-									<label for="seg1">Segundos</label>
-									<select class="form-control" id="seg1">
-										<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-									</select>
-								</div>
-								<div class="form-group col-md-3">
-									<label for="hor1">AM / PM</label>
-									<select class="form-control" id="hor1">
-										<option value="am">AM</option>
-										<option value="pm">PM</option>
-									</select>
-								</div>
-								<div class="form-group col-md-12">
-									<label for="tim1">Tiempo del ciclo (minutos)</label>
-									<select class="form-control" id="ciclo1">
-										<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-primary mx-auto d-block" data-dismiss="modal" id="activar1">Activar Módulo</button>
-							</form>
-						</div>
-						<div class="tab-pane fade" id="modulo-2" role="tabpanel">
-							<form class="form-row">
-								<div class="form-row" id="horario2">
-									<div class="form-group col-md-12">
-										<h4>Segundo Ciclo</h4>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="hora2">Hora</label>
-										<select class="form-control" id="hora2">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="min2">Minutos</label>
-										<select class="form-control" id="min2">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="seg2">Segundos</label>
-										<select class="form-control" id="seg2">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="hor2">AM / PM</label>
-										<select class="form-control" id="hor2">
-											<option value="am">AM</option>
-											<option value="pm">PM</option>
-										</select>
-									</div>
-									<div class="form-group col-md-12">
-										<label for="tim2">Tiempo del ciclo (minutos)</label>
-										<select class="form-control" id="ciclo2">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option>
-										</select>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-primary mx-auto d-block" data-dismiss="modal" id="activar2">Activar Módulo</button>
-							</form>
-						</div>
-						<div class="tab-pane fade" id="modulo-3" role="tabpanel">
-							<form class="form-row">
-								<div class="form-row" id="horario3">
-									<div class="form-group col-md-12">
-										<h4>Tercer Ciclo</h4>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="hora3">Hora</label>
-										<select class="form-control" id="hora3">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="min3">Minutos</label>
-										<select class="form-control" id="min3">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="seg3">Segundos</label>
-										<select class="form-control" id="seg3">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
-										</select>
-									</div>
-									<div class="form-group col-md-3">
-										<label for="hor3">AM / PM</label>
-										<select class="form-control" id="hor3">
-											<option value="am">AM</option>
-											<option value="pm">PM</option>
-										</select>
-									</div>        
-									<div class="form-group col-md-12">
-										<label for="ciclo3">Tiempo del ciclo (minutos)</label>
-										<select class="form-control" id="ciclo3">
-											<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option>
-										</select>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-primary mx-auto d-block" data-dismiss="modal" id="activar3">Activar Módulo</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php include('inc/auto_modal.php'); ?>
 	<script src="js/jquery.2.2.4.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="js/llamada.js"></script>
