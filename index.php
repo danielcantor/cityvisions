@@ -64,7 +64,7 @@
 											</div>
 											<div class="col-12 col-sm-5 col-md-7">
 												<div class="Section-extra">
-													<a href="#" data-toggle="modal" data-target="#automatico-single">Iniciar todas las válvulas</a>
+													<a href="#" id="activar_todo">Iniciar todas las válvulas</a>
 													<a href="#"  data-toggle="modal" data-target="#shutdown-modal">Apagar todas las válvulas</a>
 												</div>
 											</div>

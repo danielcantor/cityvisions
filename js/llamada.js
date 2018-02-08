@@ -427,6 +427,34 @@ $('document').ready(function(){
             }
     })
 })
+    $('#activar_todo').click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'post',
+            url: 'inc/activar_todo.php',
+            data: {
+                'manual': 1
+            }, success: function (w) {
+                $('#resp-down').removeClass('d-none');
+                $.post("inc/modo.php", function (htmlexterno) {
+                    $("#modo").html(htmlexterno);
+                });
+                $.post("inc/menu.php", function (htmlexterno) {
+                    $("#menu").html(htmlexterno);
+                });
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $.post("inc/countdown.php", function (htmlexterno) {
+                    $("#countdown").html(htmlexterno);
+                });
+                $("#respuesta").html(w);
+                setTimeout(function () {
+                    $('#respuesta').alert('close');
+                }, 6000);
+            }
+        })
+    })
     $('#apagar').click(function (event) {
         event.preventDefault();
         $.ajax({
