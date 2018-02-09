@@ -263,7 +263,7 @@ $('document').ready(function(){
                         $("#menu").html(htmlexterno);
                     });
                     $.post("inc/auto_modal.php", function (htmlexterno) {
-                        $("body").html(htmlexterno);
+                        $("body").append(htmlexterno);
                     });
                     $("#respuesta").html(w);
                     setTimeout(function(){
@@ -314,7 +314,7 @@ $('document').ready(function(){
                     $("#countdown").html(htmlexterno);
                 });
                 $.post("inc/auto_modal.php", function (htmlexterno) {
-                    $("body").html(htmlexterno);
+                    $("body").append(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -374,7 +374,7 @@ $('document').ready(function(){
                     $("#countdown").html(htmlexterno);
                 });
                 $.post("inc/auto_modal.php", function (htmlexterno) {
-                    $("body").html(htmlexterno);
+                    $("#mb").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -399,7 +399,7 @@ $('document').ready(function(){
             }
         })
     });
-    $('#actmanual').click(function (event) {
+    $('#manualv').click(function (event) {
         event.preventDefault();
         $.ajax({
             type: 'post',
@@ -416,9 +416,6 @@ $('document').ready(function(){
                 });
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
-                });
-                $.post("inc/countdown.php", function (htmlexterno) {
-                    $("#countdown").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -445,9 +442,6 @@ $('document').ready(function(){
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
                 });
-                $.post("inc/countdown.php", function (htmlexterno) {
-                    $("#countdown").html(htmlexterno);
-                });
                 $("#respuesta").html(w);
                 setTimeout(function () {
                     $('#respuesta').alert('close');
@@ -455,7 +449,8 @@ $('document').ready(function(){
             }
         })
     })
-    $('#apagar').click(function (event) {
+
+    $('#si').click(function (event) {
         event.preventDefault();
         $.ajax({
             type: 'post',
@@ -475,28 +470,6 @@ $('document').ready(function(){
                 });
                 $.post("inc/countdown.php", function (htmlexterno) {
                     $("#countdown").html(htmlexterno);
-                });
-                $("#respuesta").html(w);
-                setTimeout(function () {
-                    $('#respuesta').alert('close');
-                }, 6000);
-            }
-        })
-    })
-    $('#si').click(function (event) {
-        event.preventDefault();
-        $.ajax({
-            type: 'post',
-            url: 'inc/apagar.php',
-            data: {
-                'apagar': 1
-            }, success: function (w) {
-                $('#resp-down').removeClass('d-none');
-                $.post("inc/modo.php", function (htmlexterno) {
-                    $("#modo").html(htmlexterno);
-                });
-                $.post("inc/reload.php", function (htmlexterno) {
-                    $("#reload").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {

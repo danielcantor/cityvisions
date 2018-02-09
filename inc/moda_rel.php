@@ -1,19 +1,4 @@
-<?php 
-    include('conexion.php');
-     $con=mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');
-     $row = mysqli_fetch_assoc($con);
-?>
-<div class="modal fade" id="automatico-single" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Configuración</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body" id="mb">
-					<?php
+<?php
      include('conexion.php');
      $con=mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');
      $row = mysqli_fetch_assoc($con);
@@ -43,8 +28,8 @@
                                     }
                                     if($row['hora_1']==12){
                                         $hor = "pm";
-									}
-									?>
+                                    }
+                                    ?>
                                     <small><?php echo "Esta configurado para activarse a: ".$row['hora_1'].":".$row['min_1'].$hor;  ?></small>
                                     <?php }else{ ?>
                                     <span class="badge badge-danger">Inactivo</span></h4>
@@ -188,8 +173,8 @@
                                     }
                                     if($row['hora_3']==12){
                                         $hor = "pm";
-									}
-									?>
+                                    }
+                                    ?>
                                     <small><?php echo "Esta configurado para activarse a: ".$row['hora_3'].":".$row['min_3'].$hor;  ?></small>
                                     <?php }else{ ?>
                                     <span class="badge badge-danger">Inactivo</span></h4>
@@ -241,8 +226,3 @@
 								<button type="submit" class="btn btn-primary mx-auto d-block" data-dismiss="modal" id="activar3">Activar Horario</button>
 							</form>
 </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>

@@ -7,29 +7,47 @@
     //se empieza con el primer horario
     if($row['hora_1'] != 0){
             //si la hora es mayor a 12 se convierte en formato 12 horas
-        if($row['hora_1'] > 12){
+        if($row['hora_1'] > 11){
+            if($row['hora_1'] == 12){
+               $riego =$row['hora_1'].":".$row['min_1']." pm"; 
+               $fecha_entrada = strtotime($riego);
+               $fecha_actual = strtotime($hora_actual);
+            }else{
             $horafin = $row['hora_1'] - 12;
             $riego =$horafin.":".$row['min_1']." pm";
             $fecha_actual = strtotime($hora_actual);
             $fecha_entrada = strtotime($riego);
+            }
             if($fecha_actual>=$fecha_entrada){
-                // si la hora actual es mayor pasa a comprobar el siguiente horario
+                // si la hora actual o igual es mayor pasa a comprobar el siguiente horario
                if($row['hora_2'] != 0){
-                    if($row['hora_2']>12){
+                    if($row['hora_2']>11){
                          //si la hora es mayor a 12 se convierte en formato 12 horas
+                         if($row['hora_2'] == 12){
+                        $riego =$row['hora_2'].":".$row['min_2']." pm"; 
+                        $fecha_entrada = strtotime($riego);
+                        $fecha_actual = strtotime($hora_actual);
+                        }else{
                         $horafin = $row['hora_2'] - 12;
                         $riego =$horafin.":".$row['min_2']." pm";
                         $fecha_actual = strtotime($hora_actual);
                         $fecha_entrada = strtotime($riego);
+                        }
                         if($fecha_actual>=$fecha_entrada){
                             if($row['hora_3'] != 0){
                                  // si la hora actual es mayor pasa a comprobar el ultimo horario
                                 if($row['hora_3']>12){
                                      //si la hora es mayor a 12 se convierte en formato 12 horas
+                                     if($row['hora_3'] == 12){
+                                        $riego =$row['hora_3'].":".$row['min_3']." pm"; 
+                                        $fecha_entrada = strtotime($riego);
+                                        $fecha_actual = strtotime($hora_actual);
+                                        }else{
                                     $horafin = $row['hora_3'] - 12;
                                     $riego = $horafin.":".$row['min_3']." pm";
                                     $fecha_actual = strtotime($hora_actual);
                                     $fecha_entrada = strtotime($riego);
+                                    }
                                     if($fecha_actual>=$fecha_entrada){
                                          //al no haber mas horarios configurables salta a esto
                                         echo "N/P";
@@ -64,10 +82,16 @@
                             //ultimo horario
                             if($row['hora_3'] != 0){
                                 if($row['hora_3']>12){
+                                    if($row['hora_3'] == 12){
+                                        $riego =$row['hora_3'].":".$row['min_3']." pm"; 
+                                        $fecha_entrada = strtotime($riego);
+                                        $fecha_actual = strtotime($hora_actual);
+                                        }else{
                                     $horafin = $row['hora_3'] - 12;
                                     $riego = $horafin.":".$row['min_3']." pm";
                                     $fecha_actual = strtotime($hora_actual);
                                     $fecha_entrada = strtotime($riego);
+                                    }
                                     if($fecha_actual>$fecha_entrada){
                                         //respuesta final
                                         echo "N/P";
@@ -106,17 +130,29 @@
             if($fecha_actual>$fecha_entrada){
                if($row['hora_2'] != 0){
                 if($row['hora_2']>12){
-                        $horafin = $row['hora_2'] - 12;
-                        $riego =$horafin.":".$row['min_2']." pm";
-                        $fecha_actual = strtotime($hora_actual);
-                        $fecha_entrada = strtotime($riego);
+                        if($row['hora_2'] == 12){
+                                        $riego =$row['hora_2'].":".$row['min_2']." pm"; 
+                                        $fecha_entrada = strtotime($riego);
+                                        $fecha_actual = strtotime($hora_actual);
+                                        }else{
+                                    $horafin = $row['hora_2'] - 12;
+                                    $riego = $horafin.":".$row['min_2']." pm";
+                                    $fecha_actual = strtotime($hora_actual);
+                                    $fecha_entrada = strtotime($riego);
+                                    }
                         if($fecha_actual>=$fecha_entrada){
                             if($row['hora_3'] != 0){
                                 if($row['hora_3']>12){
+                                    if($row['hora_3'] == 12){
+                                        $riego =$row['hora_3'].":".$row['min_3']." pm"; 
+                                        $fecha_entrada = strtotime($riego);
+                                        $fecha_actual = strtotime($hora_actual);
+                                        }else{
                                     $horafin = $row['hora_3'] - 12;
                                     $riego = $horafin.":".$row['min_3']." pm";
                                     $fecha_actual = strtotime($hora_actual);
                                     $fecha_entrada = strtotime($riego);
+                                    }
                                     if($fecha_actual>$fecha_entrada){
                                         echo "N/P";
                                     }else{
@@ -145,10 +181,16 @@
                         if($fecha_actual>$fecha_entrada){
                             if($row['hora_3'] != 0){
                                 if($row['hora_3']>12){
+                                    if($row['hora_3'] == 12){
+                                        $riego =$row['hora_3'].":".$row['min_3']." pm"; 
+                                        $fecha_entrada = strtotime($riego);
+                                        $fecha_actual = strtotime($hora_actual);
+                                        }else{
                                     $horafin = $row['hora_3'] - 12;
                                     $riego = $horafin.":".$row['min_3']." pm";
                                     $fecha_actual = strtotime($hora_actual);
                                     $fecha_entrada = strtotime($riego);
+                                    }
                                     if($fecha_actual>$fecha_entrada){
                                         echo "N/P";
                                     }else{

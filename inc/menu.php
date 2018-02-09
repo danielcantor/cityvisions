@@ -12,7 +12,7 @@
     }
     
 ?></a></li>
-                                <li><a href="#" id="actmanual"><span class="<?php
+                                <li><a href="#" id="manualv"><span class="<?php
     include_once('conexion.php');
     $con=mysqli_query($enlace,'SELECT * FROM modo_activo ORDER BY tiempo DESC LIMIT 1 ');
     $row=mysqli_fetch_assoc($con);
