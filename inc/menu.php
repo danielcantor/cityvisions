@@ -1,6 +1,6 @@
 <li><a href="#Inicio"><span class="icon inicio"></span>Inicio</a></li>
 						<li class="Nav-submenu d-none d-sm-block">Modo de Funcionamiento
-							<ul>
+							<ul id="menu2">
 								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span><?php
         include_once('conexion.php');
     $con=mysqli_query($enlace,'SELECT * FROM modo_activo ORDER BY tiempo DESC LIMIT 1 ');
