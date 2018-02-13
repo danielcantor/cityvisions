@@ -12,7 +12,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body" id="mb">
+				<div class="modal-body" id="auto_modo">
 					<?php
      include('conexion.php');
      $con=mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');
@@ -27,6 +27,7 @@
 						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-2" role="tab" aria-selected="false">Horario 2</a>
 						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-3" role="tab" aria-selected="false">Horario 3</a>
 					</div>
+					<div id="contenido">
 					<div class="tab-content" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="modulo-1" role="tabpanel">
 							<form class="form-row">
@@ -43,6 +44,9 @@
                                     }
                                     if($row['hora_1']==12){
                                         $hor = "pm";
+									}
+									if($row['min_1']<10){
+										$row['min_1'] = "0".$row['min_1'];
 									}
 									?>
                                     <small><?php echo "Esta configurado para activarse a: ".$row['hora_1'].":".$row['min_1'].$hor;  ?></small>
@@ -119,7 +123,10 @@
                                     }
                                     if($row['hora_2']==12){
                                         $hor = "pm";
-                                    }
+									}
+									if($row['min_2']<10){
+										$row['min_2'] = "0".$row['min_2'];
+									}
                                     ?>
                                     <small><?php echo "Esta configurado para activarse a: ".$row['hora_2'].":".$row['min_2'].$hor;  ?></small>
                                     <?php }else{ ?>
@@ -189,6 +196,9 @@
                                     if($row['hora_3']==12){
                                         $hor = "pm";
 									}
+									if($row['min_3']<10){
+										$row['min_3'] = "0".$row['min_3'];
+									}
 									?>
                                     <small><?php echo "Esta configurado para activarse a: ".$row['hora_3'].":".$row['min_3'].$hor;  ?></small>
                                     <?php }else{ ?>
@@ -243,6 +253,8 @@
 </div>
 					</div>
 				</div>
-			</div>
+
+					</div>
+								</div>
 		</div>
 	</div>

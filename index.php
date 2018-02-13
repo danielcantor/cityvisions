@@ -580,7 +580,7 @@
 															</div>
 														</div>
 														<div class="col-12">
-														<button class="btn btn-primary mx-auto d-block" id="autom">Activar</button>
+														<button class="btn btn-primary mx-auto d-block" id="automo">Activar</button>
 														</div>
 													</div>
 												</div>

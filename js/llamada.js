@@ -115,7 +115,7 @@ $('document').ready(function(){
         });
     });
     // modo programado
-    $('#autom').click(function(){
+    $('#automo').click(function(){
         var zona1 = $("#zona1").attr('id');
         var zona2 = $("#zona2").attr('id');
         var zona3 = $("#zona3").attr('id');
@@ -231,7 +231,7 @@ $('document').ready(function(){
         });
     });
     // modo automatico
-    $('#activar1').click(function(){
+    $('#contenido').on("click", "#activar1", function () {
             var hora = $('#hora1').val();
             var minuto = $('#min1').val();
             var segundo = $('#seg1').val();
@@ -262,8 +262,8 @@ $('document').ready(function(){
                     $.post("inc/menu.php", function (htmlexterno) {
                         $("#menu").html(htmlexterno);
                     });
-                    $.post("inc/modal_rel.php", function (htmlexterno) {
-                        $("#mb").html(htmlexterno);
+                    $.post("inc/moda_rel.php", function (htmlexterno) {
+                        $("#contenido").html(htmlexterno);
                     });
                     $("#respuesta").html(w);
                     setTimeout(function(){
@@ -273,7 +273,7 @@ $('document').ready(function(){
             });
     });
 
-    $('#activar2').click(function () {
+    $('#contenido').on("click", "#activar2", function () {
         var hora = $('#hora1').val();
         var minuto = $('#min1').val();
         var segundo = $('#seg1').val();
@@ -313,8 +313,8 @@ $('document').ready(function(){
                 $.post("inc/countdown.php", function (htmlexterno) {
                     $("#countdown").html(htmlexterno);
                 });
-                $.post("inc/modal_rel.php", function (htmlexterno) {
-                    $("#mb").html(htmlexterno);
+                $.post("inc/moda_rel.php", function (htmlexterno) {
+                    $("#contenido").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -323,7 +323,7 @@ $('document').ready(function(){
             }
         });
     });
-    $('#activar3').click(function(){
+    $('#contenido').on("click", "#activar3", function () {
         var hora = $('#hora1').val();
         var minuto = $('#min1').val();
         var segundo = $('#seg1').val();
@@ -373,8 +373,8 @@ $('document').ready(function(){
                 $.post("inc/countdown.php", function (htmlexterno) {
                     $("#countdown").html(htmlexterno);
                 });
-                $.post("inc/modal_rel.php", function (htmlexterno) {
-                    $("#mb").html(htmlexterno);
+                $.post("inc/moda_rel.php", function (htmlexterno) {
+                    $("#contenido").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -424,6 +424,10 @@ $('document').ready(function(){
             }
     })
 })
+    $('#menu').on("click", "#autom", function (event) {
+        event.preventDefault();
+        
+    })
     $('#activar_todo').click(function (event) {
         event.preventDefault();
         $.ajax({
@@ -471,8 +475,8 @@ $('document').ready(function(){
                 $.post("inc/countdown.php", function (htmlexterno) {
                     $("#countdown").html(htmlexterno);
                 });
-                $.post("inc/modal_rel.php", function (htmlexterno) {
-                    $("#mb").html(htmlexterno);
+                $.post("inc/moda_rel.php", function (htmlexterno) {
+                    $("#contenido").html(htmlexterno);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -481,7 +485,7 @@ $('document').ready(function(){
             }
         })
     })
-    //cambio de activo/inactivo modo manual
+    //cambiar modo de activo/inactivo modo manual
     $("#reload").on("click",".manual-toggle", function () {
         var id = $(this).attr('id');
         var alt = $(this).children("img").attr("alt");

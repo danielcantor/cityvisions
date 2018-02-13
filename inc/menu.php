@@ -1,7 +1,7 @@
 <li><a href="#Inicio"><span class="icon inicio"></span>Inicio</a></li>
 						<li class="Nav-submenu d-none d-sm-block">Modo de Funcionamiento
 							<ul id="menu2">
-								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span><?php
+								<li><a href="#" id="autom" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span><?php
         include_once('conexion.php');
     $con=mysqli_query($enlace,'SELECT * FROM modo_activo ORDER BY tiempo DESC LIMIT 1 ');
     $row=mysqli_fetch_assoc($con);
@@ -58,7 +58,7 @@
 						<li><a href="#Humedad"><span class="icon humedad"></span>Humedad</a></li>
 						<li class="Nav-submenu d-block d-sm-none">
 							<ul>
-								<li><a href="#" data-toggle="modal" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
+								<li><a href="#" data-toggle="modal" id="autom" data-target="#automatico-single"><span class="icon automatico"></span>Automático</a></li>
                                 <li><a href="#"><span class="<?php 
     $con=mysqli_query($enlace,'SELECT * FROM modo_activo ORDER BY tiempo DESC LIMIT 1 ');
     $row=mysqli_fetch_assoc($con);
