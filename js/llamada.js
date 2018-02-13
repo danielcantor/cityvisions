@@ -471,6 +471,9 @@ $('document').ready(function(){
                 $.post("inc/countdown.php", function (htmlexterno) {
                     $("#countdown").html(htmlexterno);
                 });
+                $.post("inc/modal_rel.php", function (htmlexterno) {
+                    $("#mb").html(htmlexterno);
+                });
                 $("#respuesta").html(w);
                 setTimeout(function () {
                     $('#respuesta').alert('close');
