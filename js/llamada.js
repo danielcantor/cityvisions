@@ -29,7 +29,6 @@ $('document').ready(function(){
     var horario= $('#horarios').val();
 
     if(horario == 0){
-
     $('#modulo-1').addClass('d-none');
     $('#horar1').fadeOut('fast');
     $('#horar1').addClass('hide');
@@ -42,7 +41,6 @@ $('document').ready(function(){
         horario=$(this).val();
         if (horario == 0) {
             $('#modulo-1').addClass('d-none');
-            $('#modulo-1').Class('hide');
             $('#horar1').fadeOut('fast');
             $('#horar1').addClass('hide');
             $('#horar2').fadeOut('fast');
