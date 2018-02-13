@@ -27,39 +27,58 @@ $('document').ready(function(){
     setTimeout(countdown(), 60000);
     // visualizacion modo automatico
     var horario= $('#horarios').val();
-    if(horario == 1){
-    $('#horario2').fadeOut('fast');
-    $('#horario3').fadeOut('fast');
-    $('#horario2').addClass('hide');
-    $('#horario3').addClass('hide');
+
+    if(horario == 0){
+
+    $('#modulo-1').addClass('d-none');
+    $('#horar1').fadeOut('fast');
+    $('#horar1').addClass('hide');
+    $('#horar2').fadeOut('fast');
+    $('#horar3').fadeOut('fast');
+    $('#horar2').addClass('hide');
+    $('#horar3').addClass('hide');
     }
     $('#horarios').change(function(){
         horario=$(this).val();
+        if (horario == 0) {
+            $('#modulo-1').addClass('d-none');
+            $('#modulo-1').Class('hide');
+            $('#horar1').fadeOut('fast');
+            $('#horar1').addClass('hide');
+            $('#horar2').fadeOut('fast');
+            $('#horar3').fadeOut('fast');
+            $('#horar2').addClass('hide');
+            $('#horar3').addClass('hide');
+        }
         if(horario == 1){
-            $('#horario2').fadeOut('fast');
-            $('#horario3').fadeOut('fast');
-            $('#horario2').addClass('hide');
-            $('#horario3').addClass('hide');
+            
+            $('#modulo-1').removeClass('d-none');
+            $('#horar1').fadeIn('fast');
+            $('#horar1').removeClass('hide');
+            $('#horar2').fadeOut('fast');
+            $('#horar3').fadeOut('fast');
+            $('#horar2').addClass('hide');
+            $('#horar3').addClass('hide');
         }
         if(horario == 2){
             
-            if ($('#horario3').hasClass('hide') == false){
-                $('#horario3').fadeOut('fast');
-                $('#horario3').addClass('hide');
+            if ($('#horar3').hasClass('hide') == false){
+                $('#horar3').fadeOut('fast');
+                $('#horar3').addClass('hide');
             }else{
-                $('#horario2').fadeIn('fast');
-                $('#horario2').removeClass('hide');
+                $('#horar2').fadeIn('fast');
+                $('#horar2').removeClass('hide');
             }
         }
         if(horario == 3){
-            if ($('#horario2').hasClass('hide') == true){
-                $('#horario2').fadeIn('fast');
-                $('#horario2').removeClass('hide');
-                $('#horario3').fadeIn('fast');
-                $('#horario3').removeClass('hide');
+            if ($('#horar2').hasClass('hide') == true){
+                $('#horar2').fadeIn('fast');
+                $('#horar2').removeClass('hide');
+                $('#horar3').fadeIn('fast');
+                $('#horar3').removeClass('hide');
             }else{
-                $('#horario3').fadeIn('fast');
-                $('#horario3').removeClass('hide');
+                $('#horar3').fadeIn('fast');
+                $('#horar3').removeClass('hide');
             }            
         }
     });

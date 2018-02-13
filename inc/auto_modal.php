@@ -19,13 +19,23 @@
      $row = mysqli_fetch_assoc($con);
 ?>
 <div class="alert alert-warning"> 
-					<p>Si va a activar varios horarios configure los tiempos y use el boton de activar segun el horario final
+					<p>Seleccione la cantidad de horarios a configurar y use el boton de activar al terminar de configurar el ultimo ciclo
 					</p>
+			
+					</div>
+					<div class="form-group col-md-6">
+									<label for="horarios">Número de horarios</label>
+									<select class="form-control" id="horarios">
+										<option value="0">seleccione</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
 					</div>					
 					<div class="nav nav-tabs" id="nav-tab" role="tablist">
-						<a class="nav-item nav-link active" data-toggle="tab" href="#modulo-1" role="tab" aria-selected="true">Horario 1</a>
-						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-2" role="tab" aria-selected="false">Horario 2</a>
-						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-3" role="tab" aria-selected="false">Horario 3</a>
+						<a class="nav-item nav-link active" data-toggle="tab" href="#modulo-1" role="tab" aria-selected="true" id="horar1">Horario 1</a>
+						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-2" role="tab" aria-selected="false" id="horar2">Horario 2</a>
+						<a class="nav-item nav-link" data-toggle="tab" href="#modulo-3" role="tab" aria-selected="false" id="horar3">Horario 3</a>
 					</div>
 					<div id="contenido">
 					<div class="tab-content" id="nav-tabContent">

@@ -29,14 +29,6 @@
                                     <span class="badge badge-danger">Inactivo</span></h4>
                                   <?php  } ?>
 								</div>
-								<!-- <div class="form-group col-md-6">
-									<label for="horarios">Número de horarios</label>
-									<select class="form-control" id="horarios">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-									</select>
-								</div> -->
 								<div class="form-group col-md-3">
 									<label for="hora1">Hora</label>
 									<select class="form-control" id="hora1">
