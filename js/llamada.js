@@ -25,6 +25,34 @@ $('document').ready(function(){
 
     }
     setTimeout(countdown(), 60000);
+    //bloqueo de forms
+    $("#blocked1").find('input, textarea,select').prop('disabled', true);
+    $("#blocked2").find('input, textarea,select').prop('disabled', true);
+    $("#blocked3").find('input, textarea,select').prop('disabled', true);
+    
+    
+
+    //desbloqueo de forms segun botones
+    $('#contenido').on("click", "#editar1", function (event) {
+        event.preventDefault();
+        $("#blocked1").find('input, textarea,select').prop('disabled', false);
+        $("#editar1").prop('disabled',true);
+        $("#activar1").text("Aceptar horario");
+    });
+
+    $('#contenido').on("click", "#editar2", function (event) {
+        event.preventDefault();
+        $("#blocked2").find('input, textarea,select').prop('disabled', false);
+        $("#editar2").prop('disabled', true);
+        $("#activar2").text("Aceptar horario");
+    });
+    $('#contenido').on("click", "#editar3", function (event) {
+        event.preventDefault();
+        $("#blocked3").find('input, textarea,select').prop('disabled', false);
+        $("#editar3").prop('disabled', true);
+        $("#activar3").text("Aceptar horario");
+    });
+
     // visualizacion modo automatico
     var horario= $('#horarios').val();
 
@@ -281,6 +309,9 @@ $('document').ready(function(){
                     });
                     $.post("inc/moda_rel.php", function (htmlexterno) {
                         $("#contenido").html(htmlexterno);
+                        $("#blocked1").find('input, textarea,select').prop('disabled', true);
+                        $("#blocked2").find('input, textarea,select').prop('disabled', true);
+                        $("#blocked3").find('input, textarea,select').prop('disabled', true);
                     });
                     $("#respuesta").html(w);
                     setTimeout(function(){
@@ -332,6 +363,9 @@ $('document').ready(function(){
                 });
                 $.post("inc/moda_rel.php", function (htmlexterno) {
                     $("#contenido").html(htmlexterno);
+                    $("#blocked1").find('input, textarea,select').prop('disabled', true);
+                    $("#blocked2").find('input, textarea,select').prop('disabled', true);
+                    $("#blocked3").find('input, textarea,select').prop('disabled', true);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
@@ -392,6 +426,9 @@ $('document').ready(function(){
                 });
                 $.post("inc/moda_rel.php", function (htmlexterno) {
                     $("#contenido").html(htmlexterno);
+                    $("#blocked1").find('input, textarea,select').prop('disabled', true);
+                    $("#blocked2").find('input, textarea,select').prop('disabled', true);
+                    $("#blocked3").find('input, textarea,select').prop('disabled', true);
                 });
                 $("#respuesta").html(w);
                 setTimeout(function () {
