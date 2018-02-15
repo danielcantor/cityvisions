@@ -68,6 +68,9 @@ $('document').ready(function(){
     $('#horarios').change(function(){
         horario=$(this).val();
         if (horario == 0) {
+            $("#activar1").prop("disabled",false);
+            $("#activar2").prop("disabled",false);
+            $("#activar3").prop("disabled",false);
             $('#modulo-1').addClass('d-none');
             $('#horar1').fadeOut('fast');
             $('#horar1').addClass('hide');
@@ -77,7 +80,10 @@ $('document').ready(function(){
             $('#horar3').addClass('hide');
         }
         if(horario == 1){
-            
+            if ($("#activar1").prop("disabled") == true){
+                $("#activar1").prop("disabled",false);
+                $("#activar1").text("Activar Horario");
+            }
             $('#modulo-1').removeClass('d-none');
             $('#horar1').fadeIn('fast');
             $('#horar1').removeClass('hide');
@@ -87,7 +93,14 @@ $('document').ready(function(){
             $('#horar3').addClass('hide');
         }
         if(horario == 2){
-            
+            $("#activar1").prop("disabled", true);
+            if ($("#activar2").prop("disabled") == true) {
+                $("#activar2").prop("disabled", false);
+                $("#activar2").text("Activar Horario");
+            }
+            if ($("#activar1").prop("disabled") == true) {
+                $("#activar1").text("Use el boton del siguiente horario");
+            }
             if ($('#horar3').hasClass('hide') == false){
                 $('#horar3').fadeOut('fast');
                 $('#horar3').addClass('hide');
@@ -97,6 +110,14 @@ $('document').ready(function(){
             }
         }
         if(horario == 3){
+            $("#activar1").prop("disabled", true);
+            $("#activar2").prop("disabled", true);
+            if ($("#activar2").prop("disabled") == true) {
+                $("#activar2").text("Use el boton del siguiente horario");
+            }
+            if ($("#activar1").prop("disabled") == true) {
+                $("#activar1").text("Use el boton del siguiente horario");
+            }
             if ($('#horar2').hasClass('hide') == true){
                 $('#horar2').fadeIn('fast');
                 $('#horar2').removeClass('hide');
