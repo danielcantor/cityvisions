@@ -37,16 +37,6 @@ $('document').ready(function(){
             if ($('#countdown').text() == $('#timer').text()) {
                 $.post("inc/reload.php", function (htmlexterno) {
                     $("#reload").html(htmlexterno);
-                    $.ajax({
-                        type: 'post',
-                        url: 'inc/countdown2.php',
-                        dataType: 'json',
-                        success: function (json) {
-                            var tiempo = json.duracion * 60000;
-                            console.log(tiempo / 60000 + " minutos");
-                            setTimeout(apagar_valvs(), tiempo);
-                        }
-                    });
                 });
                 /*$.ajax({
                     type: 'post',
