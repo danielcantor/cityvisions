@@ -12,10 +12,18 @@ switch ($_POST['horario']) {
         $zona2 = $_POST['zona2'];
         $duracion2 = $_POST['duracion2'];
          if($zona == 'pm'){
-        $hora = $hora + 12;
+        if($hora == 12){
+          $hora = 12;
+        }else{
+          $hora = $hora + 12;
+        }
       }
         if($zona2 == 'pm'){
-        $hora2 = $hora2 + 12;
+        if($hora2 == 12){
+          $hora2 = 12;
+        }else{
+          $hora2 = $hora2 + 12;
+        }
       }
         include_once('conexion.php');
         $compro = mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');
@@ -46,13 +54,25 @@ switch ($_POST['horario']) {
         $zona3 = $_POST['zona3'];
         $duracion3 = $_POST['duracion3'];
         if($zona == 'pm'){
-        $hora = $hora + 12;
+        if($hora == 12){
+          $hora = 12;
+        }else{
+          $hora = $hora + 12;
+        }
       }
         if($zona2 == 'pm'){
-        $hora2 = $hora2 + 12;
+        if($hora2 == 12){
+          $hora2 = 12;
+        }else{
+          $hora2 = $hora2 + 12;
+        }
       }
-       if($zona3 == 'pm'){
-        $hora2 = $hora2 + 12;
+        if($zona3 == 'pm'){
+        if($hora3 == 12){
+          $hora3 = 12;
+        }else{
+          $hora3 = $hora3 + 12;
+        }
       }
         include_once('conexion.php');
         $compro = mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');
@@ -74,7 +94,11 @@ switch ($_POST['horario']) {
       $zona = $_POST['zona'];
       $duracion = $_POST['duracion'];
       if($zona == 'pm'){
-        $hora = $hora + 12;
+        if($hora == 12){
+          $hora = 12;
+        }else{
+          $hora = $hora + 12;
+        }
       }
       include_once('conexion.php');
       $compro = mysqli_query($enlace,'SELECT * FROM nuevo_horario ORDER BY fecha DESC LIMIT 1 ');

@@ -11,20 +11,61 @@ $('document').ready(function(){
         });
 
     }
-        setTimeout(hora(),60000);
-    //countdown  
-    function countdown() {
+    setTimeout(hora(), 60000);
+
+    //apagar  valvulas
+    function apagar_valvs() {
         $.ajax({
             type: 'post',
-            url: 'inc/countdown.php',
-            success: function (w) {
-                $('#countdown').html(w);
-                setTimeout(countdown(), 60000);
+            url: 'inc/apagar_solo.php',
+            data: {
+                'apagar': 1
+            }, success: function () {
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                });
+                $.post("inc/moda_rel.php", function (htmlexterno) {
+                    $("#contenido").html(htmlexterno);
+                });
             }
         });
-
+    }     
+    //countdown  
+    function countdown() {
+        $.post("inc/countdown.php", function (htmlexterno) {
+            $("#countdown").html(htmlexterno);
+            if ($('#countdown').text() == $('#timer').text()) {
+                $.post("inc/reload.php", function (htmlexterno) {
+                    $("#reload").html(htmlexterno);
+                    $.ajax({
+                        type: 'post',
+                        url: 'inc/countdown2.php',
+                        dataType: 'json',
+                        success: function (json) {
+                            var tiempo = json.duracion * 60000;
+                            console.log(tiempo / 60000 + " minutos");
+                            setTimeout(apagar_valvs(), tiempo);
+                        }
+                    });
+                });
+                /*$.ajax({
+                    type: 'post',
+                    url: 'inc/countdown2.php',
+                    dataType: 'json',
+                    success: function (json) {
+                        var tiempo = json.duracion * 60000;
+                        console.log(tiempo/60000+" minutos");
+                        setTimeout(apagar_valvs(), tiempo);
+                    }
+                });*/
+            } else {
+                $('#countdown').html(htmlexterno);
+            }
+            setTimeout(countdown(), 60000);
+        });
     }
     setTimeout(countdown(), 60000);
+
     //bloqueo de forms
     $("#blocked1").find('input, textarea,select').prop('disabled', true);
     $("#blocked2").find('input, textarea,select').prop('disabled', true);
@@ -55,8 +96,6 @@ $('document').ready(function(){
 
     // visualizacion modo automatico
     var horario= $('#horarios').val();
-
-    if(horario == 0){
     $('#modulo-1').addClass('d-none');
     $('#horar1').fadeOut('fast');
     $('#horar1').addClass('hide');
@@ -64,7 +103,6 @@ $('document').ready(function(){
     $('#horar3').fadeOut('fast');
     $('#horar2').addClass('hide');
     $('#horar3').addClass('hide');
-    }
     $('#horarios').change(function(){
         horario=$(this).val();
         if (horario == 0) {
@@ -322,9 +360,7 @@ $('document').ready(function(){
                     $.post("inc/countdown.php", function (htmlexterno) {
                         $("#countdown").html(htmlexterno);
                     });
-                    $.post("inc/reload.php", function (htmlexterno) {
-                        $("#reload").html(htmlexterno);
-                    });
+                   
                     $.post("inc/menu.php", function (htmlexterno) {
                         $("#menu").html(htmlexterno);
                     });
@@ -373,9 +409,7 @@ $('document').ready(function(){
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
                 });
-                $.post("inc/reload.php", function (htmlexterno) {
-                    $("#reload").html(htmlexterno);
-                });
+               
                 $.post("inc/menu.php", function (htmlexterno) {
                     $("#menu").html(htmlexterno);
                 });
@@ -436,9 +470,7 @@ $('document').ready(function(){
                 $.post("inc/modo.php", function (htmlexterno) {
                     $("#modo").html(htmlexterno);
                 });
-                $.post("inc/reload.php", function (htmlexterno) {
-                    $("#reload").html(htmlexterno);
-                });
+                
                 $.post("inc/menu.php", function (htmlexterno) {
                     $("#menu").html(htmlexterno);
                 });
