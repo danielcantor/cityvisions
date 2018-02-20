@@ -34,28 +34,32 @@ $('document').ready(function(){
     function countdown() {
         $.post("inc/countdown.php", function (htmlexterno) {
             $("#countdown").html(htmlexterno);
-            if ($('#countdown').text() == $('#timer').text()) {
-                $.post("inc/reload.php", function (htmlexterno) {
-                    $("#reload").html(htmlexterno);
-                });
-                /*$.ajax({
-                    type: 'post',
-                    url: 'inc/countdown2.php',
-                    dataType: 'json',
-                    success: function (json) {
-                        var tiempo = json.duracion * 60000;
-                        console.log(tiempo/60000+" minutos");
-                        setTimeout(apagar_valvs(), tiempo);
-                    }
-                });*/
-            } else {
-                $('#countdown').html(htmlexterno);
-            }
             setTimeout(countdown(), 60000);
         });
     }
     setTimeout(countdown(), 60000);
 
+    $("#timer").change(function(){
+        if ($('#countdown').text() == $('#timer').text()) {
+            var hora = $("#countdown").text();
+            $.ajax({
+                type: 'post',
+                url: 'inc/countdown2.php',
+                data:{
+                    hora = hora
+                },
+                dataType: 'json',
+                success: function (json) {
+                    var tiempo = json.duracion * 60000;
+                    console.log(tiempo/60000+" minutos");
+                    setTimeout(apagar_valvs(), tiempo);
+                    $.post("inc/reload.php", function (htmlexterno) {
+                        $("#reload").html(htmlexterno);
+                    });
+                }
+            });
+        }
+    });
     //bloqueo de forms
     $("#blocked1").find('input, textarea,select').prop('disabled', true);
     $("#blocked2").find('input, textarea,select').prop('disabled', true);
